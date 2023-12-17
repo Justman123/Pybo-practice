@@ -1,0 +1,41 @@
+/* common tags */
+textarea {
+    width : 100%;
+    border-radius: 10px;
+}
+input[type=submit] {
+    margin-top:10px;
+}
+body {
+    margin: 20px 20px 20px 20px;
+}
+.question_container div
+{
+    border: 1px solid rgb(158, 158, 158);
+    margin-bottom: 20px;
+    padding: 15px 15px 15px 0px;
+}
+/* classes */
+.question_container {
+    border:none;
+}
+.subject {
+    border:none;
+    padding: 0 0 0 0;
+    border-bottom:1px solid rgb(158, 158, 158);
+}
+.content {
+    border-radius: 10px;
+}
+.answer_count {
+    border:none;
+    border-bottom:1px solid rgb(158, 158, 158);
+}
+
+.answer {
+    border-radius: 10px;
+}
+.custom-btn {
+    width: 80px;
+    height: 40px;
+  }

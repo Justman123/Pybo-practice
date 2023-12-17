@@ -1,0 +1,35 @@
+{% extends 'pybo/base.html'%}
+
+{% block content %}
+<div class="container">
+    <h5>질문 등록</h5>
+    <form method="post"> 
+        {% csrf_token %}
+        <!-- 오류표시 Start -->
+        {% if form.errors %}
+        <div class="alert">
+            {% for field in form %}
+            {% if field.errors %}
+            <div>
+                <strong>{{ field.label }}</strong>
+                {{ field.errors }}
+            </div>
+            {% endif %}End
+            {% endfor %}
+        </div>
+        {% endif %}
+        <!-- 오류표시  -->
+        <!-- subject input-->
+        <div>
+            <label for="subject">제목</label>
+            <input type="text" name="subject" id="subject" value="{{ form.subject.value|default_if_none:'' }}">
+        </div>
+        <!-- content input-->
+        <div>
+            <label for="content">내용</label>
+            <textarea type="text" name="content" id="content" value="{{ form.content.value|default_if_none:'' }}"></textarea>
+        </div>
+        <button type="submit">제출</button>
+    </form>
+</div>
+{% endblock %}

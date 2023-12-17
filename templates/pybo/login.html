@@ -1,0 +1,55 @@
+{% extends 'pybo/base.html'%}
+
+{% block content %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'login.css' %}?after">
+<h2>청원고등학교 기숙사 관리 홈페이지 로그인</h2>
+<div class="container" id="container">
+  <div class="form-container sign-up-container">
+    <form action="#">
+      <h1>회원 가입</h1>
+      <div class="social-container">
+        <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+        <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+      <span>or use your email for registration</span>
+      <input type="text" placeholder="이름" />
+      <input type="email" placeholder="이메일주소" />
+      <input type="password" placeholder="비밀번호" />
+      <button>Sign Up</button>
+    </form>
+  </div>
+  <div class="form-container sign-in-container">
+    <form action="#">
+      <h1>로그인</h1>
+      <div class="social-container">
+        <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+        <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+      <span>or use your account</span>
+      <input type="email" placeholder="이메일주소" />
+      <input type="password" placeholder="비밀번호" />
+      <a href="#">비밀번호를 잃어버리셨나요?</a>
+      <button>Sign In</button>
+    </form>
+  </div>
+  <div class="overlay-container">
+    <div class="overlay">
+      <div class="overlay-panel overlay-left">
+        <h1>회원이 되신것을 환영합니다!</h1>
+        <p>되돌아가 로그인을 원하시면 아래 버튼을 클릭해주세요.</p>
+        <button class="ghost" id="signIn">로그인</button>
+      </div>
+      <div class="overlay-panel overlay-right">
+        <h1>안녕하세요,<br> 학부모님!</h1>
+        <p>처음이시다면 아래 버튼을 눌러 회원가입을 완료해주세요!</p>
+        <button class="ghost" id="signUp">회원 가입</button>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+입

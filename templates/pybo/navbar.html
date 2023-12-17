@@ -1,0 +1,19 @@
+<!-- 네비게이션바 -->
+<nav class="navbar">
+    <div class="nav_logo">
+      <a href="{% url 'pybo:index' %}"><span>ETAdom</span></a>
+    </div>
+    <!-- 햄버거 메뉴 버튼 -->
+    <div class="navbar-toggle">&#9776;</div>
+    <!-- 메뉴 요소-->
+    <ul class="nav_menu">
+      <li><a href="{% url 'pybo:index' %}">구룡관</a></li>
+      <li><a href="{% url 'pybo:index' %}">목령관</a></li>
+      {% if user.is_authenticated %}
+      <li>{{ user.username }}<a href="{% url 'common:logout' %}">(로그아웃)</a></li>
+      {% else %}
+      <li><a href="{% url 'common:login' %}">로그인</a></li>
+      <li><a href="{% url 'common:signup'%}">회원가입</a></li>
+      {% endif %}
+    </ul>
+  </nav>

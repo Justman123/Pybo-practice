@@ -1,0 +1,51 @@
+{% load static %}
+<!doctype html>
+<html lang="ko">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- pybo CSS -->
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}?after">
+    <link rel="stylesheet" type="text/css" href="{% static 'navbar.css' %}?after">
+    <title>Hello, pybo!</title>
+</head>
+<body>
+  {% include "pybo/navbar.html" %}
+  <!-- 기본 템플릿 안에 삽입될 내용 Start -->
+  {% block content %}
+
+  {% endblock %}
+  {% block script %}
+  <!--햄버거 메뉴 버튼을 클릭했을 때 메뉴를 보여주거나 숨기는 JavaScript 코드 -->
+  <script>
+    // 햄버거 메뉴 버튼을 클릭했을 때 메뉴를 보여주거나 숨기는 JavaScript 코드
+    document.querySelector('.navbar-toggle').addEventListener('click', function() {
+      document.querySelector('.nav_menu').classList.toggle('show');
+    });
+  </script>
+  <!-- 삭제 이벤트 처리-->
+  <script>
+      const delete_elements = document.getElementsByClassName("delete");
+      Array.from(delete_elements).forEach(function(element) {
+        element.addEventListener('click', function() {
+          if(confirm("정말로 삭제하시겠습니까?")) {
+            location.href = this.dataset.uri;
+        };
+        })
+      })
+  </script>
+  <!-- 추천 이벤트 처리-->
+  <script>
+    const recommend_elements = document.getElementsByClassName("recommend");
+    Array.from(recommend_elements).forEach(function(element) {
+      element.addEventListener('click', function() {
+        if(confirm("정말로 추천하시겠습니까?")) {
+          location.href = this.dataset.uri;
+      };
+      })
+    })
+</script>
+  {% endblock %}
+</body>
+</html>

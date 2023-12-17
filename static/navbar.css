@@ -1,0 +1,75 @@
+/* nav */
+
+:root {
+    --accent-color: #ffffff;
+    --text-color: #000000;
+    --background-color: #ceccd28d;}
+  
+    /* 기본적인 내비게이션 바 스타일 */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #333;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+  
+    .nav_logo a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.5em;
+    }
+  
+    .nav_menu {
+      list-style: none;
+      display: flex;
+      margin: 0;
+      padding: 0;
+    }
+  
+    .nav_menu li {
+      margin-right: 20px;
+    }
+  
+    .nav_menu a {
+      color: white;
+      text-decoration: none;
+    }
+  
+    /* 작은 화면에서만 표시되는 햄버거 메뉴 버튼 스타일 */
+    @media screen and (max-width: 768px) {
+      .nav_menu {
+        display: none; /* 작은 화면에서는 메뉴를 숨김 */
+        flex-direction: column;
+        position: absolute;
+        top: 60px; /* 햄버거 메뉴가 내비게이션 바 아래에 나타나도록 위치 조정 */
+        left: 10px;
+        background-color: #333;
+        padding: 10px;
+      }
+  
+      .nav_menu.show {
+        display: flex; /* 햄버거 메뉴가 열린 상태일 때는 표시 */
+      }
+  
+      .nav_menu li {
+        margin-right: 0;
+        margin-bottom: 10px;
+      }
+  
+      .navbar-toggle {
+        cursor: pointer;
+        display: block;
+        color: white;
+        font-size: 1.5em;
+      }
+    }
+    .nav_menu li:hover {
+      background-color: rgba(255, 255, 255, 0.306);
+      border-radius: 4px;}
+    
+    span {
+      font-size: 30px;
+    }
